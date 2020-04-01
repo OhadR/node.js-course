@@ -1,14 +1,14 @@
-function Engine() {
-    this.hp = 256;
+function Engine(hp) {
+    this.hp = hp;
 }
 
 Engine.prototype.start = function () {
     console.log("Engine with " + this.hp + " hp has been started...");
 }
 
-function Car() {
-    this.name = "wv";
-    this.engine = new Engine();
+function Car(name, engine) {
+    this.name = name;
+    this.engine = engine;
 }
 
 Car.prototype.start = function () {
@@ -17,9 +17,9 @@ Car.prototype.start = function () {
     }
 }
 
-function Driver() {
-    this.name = "tom";
-    this.car = new Car();
+function Driver(name, car) {
+    this.name = name;
+    this.car = car;
 }
 
 Driver.prototype.drive = function () {
@@ -28,7 +28,10 @@ Driver.prototype.drive = function () {
     }
 }
 
-var driver = new Driver();
+var driver = Driver("tom");
+
+driver.car = new Car("wv", new Engine(256)));
+
 driver.drive();
 
 // Engine with 256 hp has been started...
