@@ -8,7 +8,7 @@
 function someFunction() {
     return new Promise( function(resolve, reject) {
         console.log('before resolveing')
-        resolve(123);
+        return resolve(123);
         console.log('after resolveing')
         reject(456)
         console.log('after rejecting')
